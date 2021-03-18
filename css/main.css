@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+} /* reset the box sizing */
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+p{
+    margin: 0;
+}
+
+section {
+    padding: 7em 0; 
+}
+
+
+.container {
+    width: 85%; /* evita as palavras a tocarem na margem, pode ser feito com padding */
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+.split {
+    display: flex;
+    min-width: 15em;
+    gap: 1em;
+    justify-content: center;
+}
+
+.spacing > * + *{
+    margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+    display: inline-block; /* permite definir uma largura e altura no elemento. não deixa o botão ficar por cima do texto */
+    text-decoration: none; /* tira o sublinhado do botão */
+    padding: .5em 1.25em;
+    background: var(--clr-accent, blue);
+    color: var(--clr-acent, white);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    border-radius: .25em; /* deixa os corners do botão arredondados */
+    transition:
+        transform 250ms ease-in-out,
+        opacity 250ms linear;
+
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);
+    opacity: .5;
+}
+
+.primary-title {
+    font-size: 4rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    color: rgb(2, 2, 24);
+    margin-bottom: 3rem;
+
+}
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 15em 0;
+    background-image:
+        url(../img/shoe-3.png),
+        radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+
+}
+
+.featured_item {
+    display: block;
+    position: relative;
+    transform: scale(.65);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
+
+    
+    
+}
+
+.price {
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
+
+}
+
+.featured_item:hover,
+.featured_item:focus {
+    transform: scale(1);
+}
+
+.featured_item:hover .featured__details, 
+.featured_item:focus .featured__details {
+    opacity: 1;
+}
+
+.featured_item::after{
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    padding: 75% 75% 0 0 ;
+    border-radius: 50%;
+    background: #2193b0;
+    z-index: -1;
+}
+
+.featured__details {
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
+    opacity: 0;
+    transition: 250ms linear;
+}
+
+
+.product {
+    background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+    padding: 3em ;
+    border-radius: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.product__title {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 0 .2em rgba(#000, .2);
+}
+
+.shoe-red {
+    --clr-inner: rgb(236, 148, 148);
+    --clr-outer: rgb(255, 205, 111);
+    --clr-accent: rgb(248, 174, 35);
+    
+
+}
+.shoe-blue {
+    --clr-inner: rgb(122, 67, 250);
+    --clr-outer: rgb(36, 16, 68);
+    --clr-accent: rgb(78, 17, 177);
+
+}
+.shoe-white {
+    --clr-inner: rgb(88, 63, 199);
+    --clr-outer: rgb(114, 108, 170);
+    --clr-accent: rgb(35, 9, 182);
+    
+}
+
+.product__image {
+    float: right;
+    margin: -5em 0 0 0;
+    width: 50%;
+}
